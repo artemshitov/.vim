@@ -38,9 +38,11 @@ augroup END
 autocmd VimResized * wincmd =
 
 " Ignore some files
-set wildignore+=node_modules/*
+set wildignore+=*/node_modules/*
 
 " Syntastic
+set laststatus=2
+set statusline=%f "tail of the filename
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
