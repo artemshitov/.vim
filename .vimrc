@@ -51,3 +51,12 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" Russian langmap
+set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLMNOPQRSTUVWXYZ:,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
+
+" Backspaces should remove already inserted text
+set backspace=2
+
+" Disable automatic comments insertion
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
