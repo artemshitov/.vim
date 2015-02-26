@@ -17,8 +17,9 @@ filetype plugin indent on
 " syntax on
 
 " Soft tabs
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 set expandtab
 
 " Indentation
@@ -30,8 +31,8 @@ set nu
 
 " Reload vim when .vimrc changes
 augroup myvimrchooks
-  au!
-  autocmd bufwritepost .vimrc source ~/.vimrc
+    au!
+    autocmd bufwritepost .vimrc source ~/.vimrc
 augroup END
 
 " Autoresize windows
