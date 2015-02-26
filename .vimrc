@@ -60,3 +60,8 @@ set backspace=2
 
 " Disable automatic comments insertion
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+" Line wrapping
+set tw=79
+set formatoptions+=t
+set wrap linebreak nolist
