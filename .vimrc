@@ -9,12 +9,8 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 " Color scheme
 syntax enable
-colorscheme solarized
+colorscheme zenburn
 filetype on
-filetype plugin indent on
-
-" Syntax highlighting
-" syntax on
 
 " Soft tabs
 set tabstop=4
@@ -25,6 +21,8 @@ set expandtab
 " Indentation
 set autoindent
 set smartindent
+set nocindent
+filetype plugin indent on
 
 " Line numbers
 set nu
@@ -44,7 +42,7 @@ set wildignore+=*/node_modules/*
 " Syntastic
 set laststatus=2
 set statusline=%f "tail of the filename
-set statusline+=%#warningmsg#
+set statusline+=\ %#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
@@ -63,6 +61,23 @@ set backspace=2
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Line wrapping
-set tw=79
 set formatoptions+=t
 set wrap linebreak nolist
+
+" Display lines navigation
+nmap <silent> k gk
+nmap <silent> j gj
+
+" Navigate buffers
+nnoremap <silent> [b :bprevious<CR>
+nnoremap <silent> ]b :bnext<CR>
+nnoremap <silent> [B :bfirst<CR>
+nnoremap <silent> ]B :blast<CR>
+
+" This one lets :find work on subdirectories
+set path+=$PWD/**
+
+" Store temp files in separate directories
+set backupdir=~/.vim/backup//
+set directory=~/.vim/swap//
+set undodir=~/.vim/undo//
